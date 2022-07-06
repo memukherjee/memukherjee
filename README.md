@@ -1,7 +1,11 @@
-<h1 align="center">Hi 👋, I'm Akash</h1>
+<h1 align="center">Hi 😁, I'm Akash</h1>
 <h3 align="center">A passionate fullstack developer from India</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=memukherjee&label=Profile%20views&color=0e75b6&style=flat" alt="memukherjee" /> </p>
+
+- 📫 How to reach me **akash3.11.2000@gmail.com**
+
+- 📄 Know about my experiences [https://drive.google.com/file/d/1wObkHkDeKcV6CPZG_RyP2fqFhE2FwTN_/view](https://drive.google.com/file/d/1wObkHkDeKcV6CPZG_RyP2fqFhE2FwTN_/view)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">

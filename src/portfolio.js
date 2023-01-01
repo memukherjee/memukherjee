@@ -66,7 +66,7 @@ const projects = [
     description: "Social media application with functionalities like posting, liking, deleting, Singup with Google, etc. Similar to twitter with clone UI.",
     stack: ["NodeJS", "EJS", "Bootstrap", "HarperDB"],
     sourceCode: "https://github.com/memukherjee/Nagarro-Projects/tree/main/twitter-clone",
-    livePreview: "https://me-twitter.herokuapp.com/",
+    livePreview: "https://me-twitter.up.railway.app",
   },
   {
     name: "To Do App [MERN]",

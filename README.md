@@ -1,10 +1,11 @@
-<img width="100%" height="300px" src="images/bg-cover.jpg" alt="cover" />
+![cover](https://user-images.githubusercontent.com/65893885/221103521-bd52160d-275f-466c-be99-ac8ebb9b2375.jpg)
 
 # **<center>Hi, I am < Akash /> 👋</center>**
 # 💫 About Me:
 <div style="display:flex;">
 <p>I am a tier 3️⃣ college student from Asansol, WB, India, a striving learner and working hard with over 1.5+ years of experience in web development. I am a self-taught developer, with a passion for learning and an interest in bleeding-edge technologies⚡ and tech stack.<br>I am currently working on React JS⚛️<br>I have an interest in learning Mobile Development📱</p>
-<img width="25%" align="right" alt="Coder" src="images/coder.png" />
+<img width="25%" src="https://user-images.githubusercontent.com/65893885/221103670-0d118474-dba6-4ab9-9f92-dbacad048f21.png" alt="coder" />
+
 </div>
 
 

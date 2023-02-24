@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { useState } from "react";
 import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
 

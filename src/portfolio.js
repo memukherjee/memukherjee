@@ -24,7 +24,9 @@ import {
   faM,
   faE,
   faDatabase,
-  faFilm
+  faFilm,
+  faLinkSlash,
+  faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 
 const newline = "<br>&emsp;&emsp;";
@@ -61,11 +63,38 @@ const about = {
 
 const projects = [
   {
+    name: "E-Commerce Website",
+    icon: faCartShopping,
+    description:
+      "E-commerce website with all the basic functionalities like adding products to cart, checkout, wishlist, etc including a modern minimal UI. It also has an admin panel and a seller panel to manage their work. It is a full-stack application with React + Springboot + MongoDB. It's a group project with 3 other members where I am given the role to look after the frontend part.",
+    stack: [
+      "ReactJS",
+      "Springboot",
+      "MongoDB",
+      "TailwindCSS",
+      "Framer Motion",
+      "Cloudinary",
+      "Razorpay",
+    ],
+    sourceCode: "https://github.com/memukherjee/e-commerce-app",
+  },
+  {
+    name: "URL Shortener",
+    icon: faLinkSlash,
+    description:
+      "MERN stack based URL shortener application. It shortens the long URL and provides a short URL which can be used to redirect to the original URL.",
+    stack: ["ReactJS", "ExpressJS", "MongoDB", "TailwindCSS", "Vite"],
+    sourceCode: "https://github.com/memukherjee/url-shortener",
+    livePreview: "https://me-shorturl.netlify.app/",
+  },
+  {
     name: "Twitter Clone",
     icon: faTwitter,
-    description: "Social media application with functionalities like posting, liking, deleting, Singup with Google, etc. Similar to twitter with clone UI.",
+    description:
+      "Social media application with functionalities like posting, liking, deleting, Singup with Google, etc. Similar to twitter with clone UI.",
     stack: ["NodeJS", "EJS", "Bootstrap", "HarperDB"],
-    sourceCode: "https://github.com/memukherjee/Nagarro-Projects/tree/main/twitter-clone",
+    sourceCode:
+      "https://github.com/memukherjee/Nagarro-Projects/tree/main/twitter-clone",
     livePreview: "https://me-twitter.up.railway.app",
   },
   {
@@ -106,9 +135,11 @@ const projects = [
   {
     name: "OMDB Movie Finder",
     icon: faFilm,
-    description: "Frontend application to search for movies using OMDB API. Shows the details of the movie like poster, description, release year.",
+    description:
+      "Frontend application to search for movies using OMDB API. Shows the details of the movie like poster, description, release year.",
     stack: ["HTML", "Javascript", "Bootstrap"],
-    sourceCode: "https://github.com/memukherjee/Nagarro-Projects/tree/main/OMDB-api",
+    sourceCode:
+      "https://github.com/memukherjee/Nagarro-Projects/tree/main/OMDB-api",
     livePreview: "https://memukherjee.github.io/Nagarro-Projects/OMDB-api/",
   },
   {
@@ -160,18 +191,18 @@ const skills = [
   { name: "Java", icon: faJava },
   { name: "C", icon: faCode },
   { name: "HTML", icon: faHtml5 },
-  {name: "CSS", icon: faCss3 },
-  {name: "JavaScript", icon: faJsSquare },
-  {name: "Bootstrap", icon: faBootstrap },
-  {name: "JQuery", icon: faJsSquare },
-  {name: "React", icon: faReact },
-  {name: "Material UI", icon: faM },
-  {name: "EJS", icon: faNodeJs },
-  {name: "Node", icon: faNodeJs },
-  {name: "Express", icon: faE },
-  {name: "MongoDB", icon: faDatabase },
-  {name: "SQL", icon: faDatabase },
-  {name: "Git", icon: faGitAlt },
+  { name: "CSS", icon: faCss3 },
+  { name: "JavaScript", icon: faJsSquare },
+  { name: "Bootstrap", icon: faBootstrap },
+  { name: "JQuery", icon: faJsSquare },
+  { name: "React", icon: faReact },
+  { name: "Material UI", icon: faM },
+  { name: "EJS", icon: faNodeJs },
+  { name: "Node", icon: faNodeJs },
+  { name: "Express", icon: faE },
+  { name: "MongoDB", icon: faDatabase },
+  { name: "SQL", icon: faDatabase },
+  { name: "Git", icon: faGitAlt },
 ];
 
 const contact = {

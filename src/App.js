@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { useState } from "react";
 import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
 
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="app" data-theme={theme}>
-      <Router>
+      <Router >
           <Navbar setTheme={setTheme} theme={theme} />
           <AnimatedRoutes />
           <div className="bottom"></div>

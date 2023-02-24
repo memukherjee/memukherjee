@@ -4,7 +4,7 @@
 # 💫 About Me:
 <div style="display:flex;">
 <p>I am a tier 3️⃣ college student from Asansol, WB, India, a striving learner and working hard with over 1.5+ years of experience in web development. I am a self-taught developer, with a passion for learning and an interest in bleeding-edge technologies⚡ and tech stack.<br>I am currently working on React JS⚛️<br>I have an interest in learning Mobile Development📱</p>
-<img width="25%" src="https://user-images.githubusercontent.com/65893885/221103670-0d118474-dba6-4ab9-9f92-dbacad048f21.png" alt="coder" />
+<img width="25%" align="right" src="https://user-images.githubusercontent.com/65893885/221103670-0d118474-dba6-4ab9-9f92-dbacad048f21.png" alt="coder" />
 
 </div>
 

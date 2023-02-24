@@ -66,7 +66,7 @@ const projects = [
     name: "E-Commerce Website",
     icon: faCartShopping,
     description:
-      "E-commerce website with all the basic functionalities like adding products to cart, checkout, wishlist, etc including a modern minimal UI. It also has an admin panel and a seller panel to manage their work. It is a full-stack application with React + Springboot + MongoDB. It's a group project with 3 other members where I am given the role to look after the frontend part.",
+      "E-commerce website with all the basic functionalities like adding products to cart, checkout, wishlist, etc including a modern minimal UI. It's a group project with 3 other members where I am given the role to look after the frontend part.",
     stack: [
       "ReactJS",
       "Springboot",

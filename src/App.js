@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="app" data-theme={theme}>
       <Router>
-        <Navbar setTheme={setTheme} theme={theme} />
-        <AnimatedRoutes />
-        <div className="bottom"></div>
+          <Navbar setTheme={setTheme} theme={theme} />
+          <AnimatedRoutes />
+          <div className="bottom"></div>
       </Router>
     </div>
   );

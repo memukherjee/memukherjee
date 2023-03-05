@@ -1,5 +1,7 @@
 # **<h1 align="center">Hi, I am < Akash /> 👋</h1>**
-![cover](https://user-images.githubusercontent.com/65893885/221105071-e0ce35c4-c5be-49b4-b980-ea79121355df.jpg)
+![DEVELOPER COVER](https://user-images.githubusercontent.com/65893885/222942780-ab6568fb-b2dc-410a-844d-ca54dea948cb.png)
+
+
 # 💫 About Me:
 <div style="display:flex;">
 <p>I am a tier 3️⃣ college student from Asansol, WB, India, a striving learner and working hard with over 1.5+ years of experience in web development. I am a self-taught developer, with a passion for learning and an interest in bleeding-edge technologies⚡ and tech stack.<br>I am currently working on React JS⚛️<br>I have an interest in learning Mobile Development📱</p>

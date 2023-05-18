@@ -76,6 +76,7 @@ const projects = [
       "Cloudinary",
       "Razorpay",
     ],
+    livePreview: "https://elegantapparels.netlify.app",
     sourceCode: "https://github.com/memukherjee/e-commerce-app",
   },
   {

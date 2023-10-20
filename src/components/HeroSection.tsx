@@ -1,5 +1,3 @@
-import { about } from "../assets/portfolio";
-import HeroText from "./HeroText";
 import {
     easeOut,
     motion,
@@ -8,14 +6,21 @@ import {
     useTransform,
 } from "framer-motion";
 import { useRef } from "react";
-import usePageHeight from "../hooks/usePageHeight";
+import { about } from "../assets/portfolio";
+import HeroText from "./HeroText";
+import useElementHeight from "../hooks/useElementHeight";
 import ScrollDownArrow from "./ScrollDownArrow";
 
 export default function HeroSection() {
     const { scrollYProgress } = useScroll();
     const scrollRef = useRef(null);
-    const { pageHeight: sectionHeight } = usePageHeight(scrollRef);
-    const sectionHeightPercent = sectionHeight / window.innerHeight;
+    const { height: sectionHeight } = useElementHeight(scrollRef);
+    const { height: fullPageHeight } = useElementHeight();
+
+    const sectionHeightPercent =
+        fullPageHeight === 0 ? 0 : sectionHeight / fullPageHeight;
+
+    console.log(sectionHeight, fullPageHeight, sectionHeightPercent.toFixed(2));
 
     const physics = { damping: 15, mass: 0.27, stiffness: 55 };
     const dashScale = useSpring(
@@ -31,14 +36,29 @@ export default function HeroSection() {
         physics
     );
 
+    const heroContainerVariant = {
+        pageInitial: {
+            y: "100%",
+        },
+        pageAnimate: {
+            y: 0,
+        },
+        pageExit: {
+            y: "100%",
+        },
+    };
+
     return (
-        <section id="hero" ref={scrollRef} className="hero overflow-hidden">
+        <section
+            id="hero"
+            ref={scrollRef}
+            className="hero overflow-hidde mb-16"
+        >
             <div className="top-container-wrapper overflow-hidden">
                 <motion.div
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
+                    variants={heroContainerVariant}
                     transition={{ duration: 0.35, delay: 0.35, ease: easeOut }}
-                    className="top-container flex justify-between items-start px-12 overflow-hidden"
+                    className="top-container flex justify-between items-start px-12"
                 >
                     <motion.span
                         style={{
@@ -67,8 +87,7 @@ export default function HeroSection() {
 
             <div className="bottom-container-wrapper overflow-hidden">
                 <motion.div
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
+                    variants={heroContainerVariant}
                     transition={{ duration: 0.35, delay: 0.7, ease: easeOut }}
                     className="bottom-container flex justify-between items-start gap-8 px-12"
                 >
@@ -94,7 +113,7 @@ export default function HeroSection() {
                             </span>
                         </p>
                         <div className="flex justify-between items-center">
-                            <span>Scroll Down</span>
+                            <span className="text-base">Scroll Down</span>
                             <ScrollDownArrow />
                         </div>
                     </motion.div>

@@ -8,7 +8,7 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
     return (
         <SmoothScroll>
-            <main className="bg-primary min-h-screen h-[200vh] text-primary font-medium font-sans">
+            <main className="bg-primary min-h-screen text-primary font-medium font-sans">
                 {children}
             </main>
         </SmoothScroll>

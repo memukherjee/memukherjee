@@ -3,7 +3,7 @@ import { BsArrowDownShort } from "react-icons/bs";
 export default function ScrollDownArrow() {
     return (
         <a
-            href="#hero"
+            href="#projects-section"
             className="relative overflow-hidden inline-flex cursor-pointer group"
         >
             <div className="rotating-circle absolute inset-0 rounded-full border-2 border-dashed animate-spin border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>

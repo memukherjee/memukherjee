@@ -1,6 +1,6 @@
 export default function NotFound() {
     return (
-        <div className="w-full ">
+        <div>
             <span>404 Not Found</span>
         </div>
     );

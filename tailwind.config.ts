@@ -10,11 +10,11 @@ export default {
                 bebas: ["Bebas Neue", "sans-serif"],
             },
             fontSize: {
-                sm: "0.8125rem",
+                sm: "0.87rem",
                 base: "1.08rem",
                 lg: "1.25rem",
                 xl: "1.75rem",
-                giant: "16rem",
+                giant: "10rem",
                 hero: "22rem",
             },
             lineHeight: {
@@ -26,17 +26,18 @@ export default {
             colors: {
                 primary: "#777",
                 secondary: "#aaa",
-                accent: "#9851fc",
+                accent: "#6666ff",
                 dark: "#111",
             },
             backgroundColor: {
                 primary: "#111",
-                accent: "#9851fc",
+                accent: "#6666ff",
             },
             animation: {
                 "border-pulse": "border-pulse 5s ease-in-out infinite",
-                "infinite-arrow": "infinite-arrow 1s cubic-bezier(.175,.885,.32,1.275) infinite",
-                "spin": "spin 5s linear infinite",
+                "infinite-arrow":
+                    "infinite-arrow 1s cubic-bezier(.175,.885,.32,1.275) infinite",
+                spin: "spin 5s linear infinite",
             },
             keyframes: {
                 "border-pulse": {
@@ -58,10 +59,10 @@ export default {
     plugins: [
         plugin(function ({ addUtilities }) {
             addUtilities({
-                '.min-h-screen': {
-                    minHeight: ['100vh','100dvh'],
-                }
-            })
+                ".min-h-screen": {
+                    minHeight: ["100vh", "100dvh"],
+                },
+            });
         }),
     ],
 };

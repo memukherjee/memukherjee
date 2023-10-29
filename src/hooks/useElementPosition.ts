@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useState } from "react";
 
-export default function useElementTop(elementRef: RefObject<HTMLElement>) {
+export default function useElementPosition(elementRef: RefObject<HTMLElement>) {
     const [elementPosition, setElementPosition] = useState({
         top: 0,
         bottom: 0,

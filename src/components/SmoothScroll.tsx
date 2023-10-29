@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useRef } from "react";
 import { useScroll, useTransform, useSpring, motion } from "framer-motion";
 import usePageHeight from "../hooks/useElementHeight";
+import { useLocation } from "react-router-dom";
 
 type SmoothScrollProps = {
     children: ReactNode;
@@ -21,6 +22,7 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
     const physics = { damping: 15, mass: 0.27, stiffness: 55 }; // easing of smooth scroll
     const spring = useSpring(transform, physics); // apply easing to the negative scroll value
 
+    const location = useLocation();
     useEffect(() => {
         const container = scrollRef.current;
         const body = document.body;
@@ -35,7 +37,7 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
         return () => {
             body.style.height = "";
         };
-    }, [pageHeight]);
+    }, [pageHeight, location]);
 
     return (
         <>

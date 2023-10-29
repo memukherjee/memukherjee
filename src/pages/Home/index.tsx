@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import HeroSection from "../../components/HeroSection";
 import ProjectsSection from "../../components/ProjectsSection";
 import SkillSection from "../../components/SkillSection";
+import ContactSection from "../../components/ContactSection";
 
 function Home() {
     return (
@@ -13,6 +14,7 @@ function Home() {
             <HeroSection />
             <ProjectsSection />
             <SkillSection />
+            <ContactSection />
         </motion.div>
     );
 }

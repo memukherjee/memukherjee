@@ -27,6 +27,7 @@ const twTheme = theme.extend;
 const buttonVariants = {
     initial: {
         backgroundColor: "#ffffff00",
+        color: twTheme.colors.secondary,
         borderColor: twTheme.colors.primary,
     },
     hover: {
@@ -63,7 +64,7 @@ const LinkButton = memo(
                     animate="initial"
                     variants={buttonVariants}
                     transition={{ duration: 0.15, ease: [0.5, 0.71, 1, 1.5] }}
-                    className="border bg-[#ffffff00] border-primary rounded-full transition-colors px-2 py-1 cursor-pointer relative overflow-hidden"
+                    className="border-2 bg-[#ffffff00] border-primary rounded-full transition-colors px-2 py-0.5 cursor-pointer relative overflow-hidden"
                 >
                     <motion.span
                         variants={text1Variants}
@@ -71,7 +72,7 @@ const LinkButton = memo(
                             duration: 0.5,
                             ease: [0.175, 0.885, 0.32, 1.275],
                         }}
-                        className="text-base block whitespace-nowrap translate-y-0"
+                        className="text-base block whitespace-nowrap translate-y-0 uppercase"
                     >
                         {children}
                     </motion.span>
@@ -81,7 +82,7 @@ const LinkButton = memo(
                             duration: 0.5,
                             ease: [0.175, 0.885, 0.32, 1.275],
                         }}
-                        className="text-base block whitespace-nowrap absolute inset-0 left-2 top-1 translate-y-[50]"
+                        className="text-base uppercase block whitespace-nowrap absolute inset-0 left-2 top-1 translate-y-[50]"
                         aria-hidden="true"
                     >
                         {children}

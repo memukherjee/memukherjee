@@ -20,8 +20,6 @@ export default function HeroSection() {
     const sectionHeightPercent =
         fullPageHeight === 0 ? 0 : sectionHeight / fullPageHeight;
 
-    console.log(sectionHeight, fullPageHeight, sectionHeightPercent.toFixed(2));
-
     const physics = { damping: 15, mass: 0.27, stiffness: 55 };
     const dashScale = useSpring(
         useTransform(scrollYProgress, [0, sectionHeightPercent], [1.75, 4]),

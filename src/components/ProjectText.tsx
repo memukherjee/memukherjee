@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import useElementPosition from "../hooks/useElementPosition";
 import useElementHeight from "../hooks/useElementHeight";
+import SlideUpText from "./SlideUpText";
 
 type ProjectTextProps = {
     project: {
@@ -38,6 +39,8 @@ export default function ProjectText({ project, index }: ProjectTextProps) {
         physics
     );
 
+    const text = `${project.name}-${project.about}`;
+
     return (
         <Link
             style={{
@@ -53,13 +56,8 @@ export default function ProjectText({ project, index }: ProjectTextProps) {
                             ? rightMovingTextPosition
                             : leftMovingTextPosition,
                 }}
-                className="text-giant font-bebas leading-[1] whitespace-nowrap relative group/heading"
             >
-                <span
-                    data-content={`${project.name}-${project.about}`}
-                    className="inline-block w-full h-full absolute inset-0 before:content-[attr(data-content)] before:bg-gradient-to-b before:from-primary before:from-50% before:to-50% before:to-accent before:bg-clip-text before:text-transparent before:bg-[length:100%_200%] before:bg-[0%_0%] before:group-hover/heading:bg-[100%_100%] before:transition-all before:duration-300 before:ease-linear"
-                ></span>
-                {`${project.name}-${project.about}`}
+                <SlideUpText text={text} />
             </motion.h1>
         </Link>
     );

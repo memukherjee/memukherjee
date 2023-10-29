@@ -8,8 +8,10 @@ export default {
             fontFamily: {
                 sans: ["Open Sans", "sans-serif"],
                 bebas: ["Bebas Neue", "sans-serif"],
+                mono: ["JetBrains Mono", "monospace"],
             },
             fontSize: {
+                xs: "0.8rem",
                 sm: "0.87rem",
                 base: "1.08rem",
                 lg: "1.25rem",
@@ -26,18 +28,27 @@ export default {
             colors: {
                 primary: "#777",
                 secondary: "#aaa",
-                accent: "#6666ff",
+                accent: "#EBD762",
                 dark: "#111",
             },
             backgroundColor: {
                 primary: "#111",
-                accent: "#6666ff",
+                secondary: "#777",
+                accent: "#EBD762",
+                light: "#aaa",
+            },
+            transitionTimingFunction: {
+                "in": "cubic-bezier(0.4, 0, 1, 1)",
+                "out": "cubic-bezier(0, 0, 0.2, 1)",
+                "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+                "spring": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
             },
             animation: {
                 "border-pulse": "border-pulse 5s ease-in-out infinite",
                 "infinite-arrow":
                     "infinite-arrow 1s cubic-bezier(.175,.885,.32,1.275) infinite",
                 spin: "spin 5s linear infinite",
+                "loop-text": "loop-text 15s linear infinite",
             },
             keyframes: {
                 "border-pulse": {
@@ -53,6 +64,14 @@ export default {
                         transform: "translateY(0)",
                     },
                 },
+                "loop-text": {
+                    "0%": {
+                        transform: "translateX(0)",
+                    },
+                    "100%": {
+                        transform: "translateX(-50%)",
+                    },
+                },
             },
         },
     },
@@ -61,6 +80,9 @@ export default {
             addUtilities({
                 ".min-h-screen": {
                     minHeight: ["100vh", "100dvh"],
+                },
+                ".pause-animation": {
+                    animationPlayState: "paused",
                 },
             });
         }),

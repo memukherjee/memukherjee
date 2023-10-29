@@ -15,18 +15,18 @@ import {
     FaGraduationCap,
     FaGamepad,
     FaJava,
-    FaCode,
     FaHtml5,
     FaCss3,
     FaBootstrap,
     FaReact,
-    FaM,
     FaNodeJs,
-    FaE,
-    FaDatabase,
     FaGitAlt,
+    FaCuttlefish,
 } from "react-icons/fa6";
 import { FaJsSquare } from "react-icons/fa";
+import { SiMui, SiJquery, SiMongodb, SiMysql } from "react-icons/si";
+import { DiNodejs } from "react-icons/di";
+import { BsFiletypeJs } from "react-icons/bs";
 
 export const about = {
     fullName: "Akash Mukherjee",
@@ -34,10 +34,19 @@ export const about = {
         first: "Akash",
         last: "Mukherjee",
     },
+    address: {
+        city: "Asansol",
+        state: "West Bengal",
+        country: "India",
+        countryCode: "IN",
+        pincode: "713303",
+    },
     role: "Full Stack Developer",
     otherRoles: ["Frontend Developer", "Backend Developer"],
     message: "Available to work for \nfull-time or freelance",
     bio: `I'm a tier 3 college student in Asansol, India, with 2.5+ years of web development experience. Self-taught, I love learning and exploring new technologies, proficient in Java, JavaScript, and enthusiastic about frontend and backend development, recently mastering the MERN stack.`,
+    contactMessage:
+        "Are you ready to transform your ideas into exceptional projects? I'm here to make it happen. Let's kick-start the creative process together and take your vision to the next level. Feel free to reach out to me and let's explore the endless possibilities that await us. I'm excited to connect with you and embark on this journey of innovation and success.",
     resume: "https://drive.google.com/file/d/1wObkHkDeKcV6CPZG_RyP2fqFhE2FwTN_/view?usp=sharing",
     socials: [
         {
@@ -250,21 +259,264 @@ export const projects = [
 ];
 
 export const skills = [
-    { name: "Java", icon: FaJava },
-    { name: "C", icon: FaCode },
-    { name: "HTML", icon: FaHtml5 },
-    { name: "CSS", icon: FaCss3 },
-    { name: "JavaScript", icon: FaJsSquare },
-    { name: "Bootstrap", icon: FaBootstrap },
-    { name: "JQuery", icon: FaJsSquare },
-    { name: "React", icon: FaReact },
-    { name: "Material UI", icon: FaM },
-    { name: "EJS", icon: FaNodeJs },
-    { name: "Node", icon: FaNodeJs },
-    { name: "Express", icon: FaE },
-    { name: "MongoDB", icon: FaDatabase },
-    { name: "SQL", icon: FaDatabase },
-    { name: "Git", icon: FaGitAlt },
+    {
+        name: "Java",
+        icon: FaJava,
+        color: "#0d8ac7",
+        extensionName: "java",
+        code: `
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+`,
+    },
+    {
+        name: "C",
+        icon: FaCuttlefish,
+        color: "#3548a4",
+        bgColor: "#141e29",
+        extensionName: "c",
+        code: `
+#include<stdio.h>
+int main(){
+    printf("Hello World");
+    return 0;
+}
+`,
+    },
+    {
+        name: "HTML",
+        icon: FaHtml5,
+        color: "#e34c26",
+        bgColor: "#222",
+        extensionName: "html",
+        code: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+</body>
+</html>
+`,
+    },
+    {
+        name: "CSS",
+        icon: FaCss3,
+        color: "#264de4",
+        bgColor: "#222",
+        extensionName: "css",
+        code: `
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+.container{
+    color: #fff;
+    background-color: #222;
+    padding: 1rem;
+}
+#hero-section{
+    overflow: hidden;
+    background-color: #222;
+}
+`,
+    },
+    {
+        name: "JavaScript",
+        icon: FaJsSquare,
+        color: "#F0DB4F",
+        bgColor: "#323330",
+        extensionName: "js",
+        code: `
+const heroText = document.querySelector("h1");
+const button = document.querySelector("button");
+heroText.innerText = "Hello World";
+button.addEventListener("click", () => {
+    alert("Hello World");
+});
+`,
+    },
+    {
+        name: "Bootstrap",
+        icon: FaBootstrap,
+        color: "#563d7c",
+        bgColor: "#222",
+        extensionName: "html",
+        code: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-primary">Hello World</h1>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+`,
+    },
+    {
+        name: "JQuery",
+        icon: SiJquery,
+        color: "#0769ad",
+        bgColor: "#222",
+        extensionName: "js",
+        code: `
+$(document).ready(function(){
+    $("h1").text("Hello World");
+});
+`,
+    },
+    {
+        name: "React",
+        icon: FaReact,
+        color: "#61dbfb",
+        bgColor: "#282c34",
+        extensionName: "jsx",
+        code: `
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+`,
+    },
+    {
+        name: "Material UI",
+        icon: SiMui,
+        color: "#0081CB",
+        bgColor: "#111",
+        extensionName: "jsx",
+        code: `
+import * as React from 'react';
+import Button from '@mui/material/Button';
+
+export default function MyButton() {
+    return <Button variant="contained">Hello world</Button>;
+}
+`,
+    },
+    {
+        name: "EJS",
+        icon: FaNodeJs,
+        color: "#FFF",
+        bgColor: "#222",
+        extensionName: "ejs",
+        code: `
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EJS</title>
+    </head>
+    <body>
+        <% if (user) { %>
+            <h2><%= user.name %></h2>
+        <% } %>
+    </body>
+</html>
+`,
+    },
+    {
+        name: "Node",
+        icon: DiNodejs,
+        color: "#68A063",
+        bgColor: "#333",
+        extensionName: "js",
+        code: `
+const http = require("http");
+const server = http.createServer((req, res) => {
+    res.end("Hello World");
+});
+server.listen(3000, () => {
+    console.log("Server is running on port 3000");
+})
+`,
+    },
+    {
+        name: "Express",
+        icon: BsFiletypeJs,
+        color: "#CCC",
+        bgColor: "#777",
+        extensionName: "js",
+        code: `
+const express = require("express");
+const app = express();
+app.get("/", (req, res) => {
+    res.send("Hello World");
+});
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+})
+`,
+    },
+    {
+        name: "MongoDB",
+        icon: SiMongodb,
+        color: "#4DB33D",
+        bgColor: "#222",
+        extensionName: "js",
+        code: `
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/sampleDB", {
+    useNewUrlParser: true,
+});
+const userSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+});
+const User = mongoose.model("User", userSchema);
+const user = new User({
+    name: "Akash",
+    age: 23,
+});
+user.save();
+`,
+    },
+    {
+        name: "SQL",
+        icon: SiMysql,
+        color: "#4479A1",
+        bgColor: "#222",
+        fileName: "Table",
+        extensionName: "sql",
+        code: `
+CREATE TABLE Persons
+(
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+SELECT * FROM Persons;
+
+`,
+    },
+    {
+        name: "Git",
+        icon: FaGitAlt,
+        color: "#F05032",
+        bgColor: "#222",
+        code: `
+> git init
+> git add .
+> git commit -m "Initial Commit"
+> git push origin master
+`,
+    },
 ];
 
 export const contact = {

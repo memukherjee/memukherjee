@@ -21,7 +21,6 @@ export default function HeroSection() {
         fullPageHeight === 0 ? 0 : sectionHeight / fullPageHeight;
 
     const physics = { damping: 15, mass: 0.27, stiffness: 55 };
-    console.log(scrollY.get());
 
     const dashScale = useSpring(
         useTransform(scrollY, [0, sectionHeightPercent], [1.75, 4]),

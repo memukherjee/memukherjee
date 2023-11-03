@@ -16,7 +16,6 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
     const { scrollY } = useScroll(); // measures how many pixels user has scrolled vertically
     // as scrollY changes between 0px and the scrollable height, create a negative scroll value...
     // ... based on current scroll position to translateY the document in a natural way
-    // console.log(pageHeight);
 
     const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight]);
     const physics = { damping: 15, mass: 0.27, stiffness: 55 }; // easing of smooth scroll
@@ -28,7 +27,6 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
         const body = document.body;
         const size = container.getBoundingClientRect().height;
 
-        // console.log(pageHeight);
         // set the size of the body to be the sized of the container
         // its needed to keep a scrollbar since the container has a fixed position
         // see CSS

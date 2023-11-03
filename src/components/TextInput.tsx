@@ -1,12 +1,27 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { Dispatch, SetStateAction } from "react";
 
 type TextInputProps = {
     type: "text" | "textarea" | "email";
     name: string;
     label: string;
+    value: string;
+    setValue: Dispatch<
+        SetStateAction<{
+            sender_name: string;
+            sender_email: string;
+            message: string;
+        }>
+    >;
 };
 
-export default function TextInput({ type, name, label }: TextInputProps) {
+export default function TextInput({
+    type,
+    name,
+    label,
+    value,
+    setValue,
+}: TextInputProps) {
     return (
         <AnimatePresence>
             <motion.div
@@ -41,6 +56,13 @@ export default function TextInput({ type, name, label }: TextInputProps) {
                         </label>
                         <textarea
                             id={name}
+                            value={value}
+                            onChange={(e) =>
+                                setValue((prev) => ({
+                                    ...prev,
+                                    [name]: e.target.value,
+                                }))
+                            }
                             className="w-full py-1 h-16 ps-2 text-lg leading-tight bg-transparent border-b-2 border-l-2 border-primary resize-none outline-none caret-primary"
                             name={name}
                         />
@@ -55,6 +77,13 @@ export default function TextInput({ type, name, label }: TextInputProps) {
                         </label>
                         <input
                             id={name}
+                            value={value}
+                            onChange={(e) =>
+                                setValue((prev) => ({
+                                    ...prev,
+                                    [name]: e.target.value,
+                                }))
+                            }
                             className="w-full h-16 ps-2 leading-none bg-transparent border-b-2 border-l-2 border-primary outline-none caret-primary"
                             type={type}
                             name={name}

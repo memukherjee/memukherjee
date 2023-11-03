@@ -1,28 +1,78 @@
-import { FormEvent, useRef } from "react";
+import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import TextInput from "../../components/TextInput";
 import PageTransitionContainer from "../../components/PageTransitionContainer";
 
 export default function Contact() {
-    const form = useRef<HTMLFormElement>(null);
+    const [formData, setFormData] = useState({
+        sender_name: "",
+        sender_email: "",
+        message: "",
+    });
+
+    const [buttonText, setButtonText] = useState({
+        primary: "Send Message",
+        secondary: "Click to send",
+    });
 
     const sendEmail = (e: FormEvent) => {
         e.preventDefault();
-
+        if(!formData.sender_name || !formData.sender_email || !formData.message) {
+            setButtonText({
+                primary: "Empty Fields",
+                secondary: "Please fill out all fields",
+            });
+            setTimeout(() => {
+                setButtonText({
+                    primary: "Send Message",
+                    secondary: "Click to send",
+                });
+            }, 5000);
+            return;
+        }
+        setButtonText({
+            primary: "Please wait",
+            secondary: "Sending...",
+        });
         emailjs
-            .sendForm(
+            .send(
                 "service_5hkrr1k",
                 "template_efkwcyn",
-                form.current ?? "",
+                formData,
                 "v1zhJhzkp6pu7_S-v"
             )
             .then(
                 (result) => {
-                    console.log(result.text);
+                    setButtonText({
+                        primary: "Message Sent",
+                        secondary: "Thanks for reaching out!",
+                    });
+                    setFormData({
+                        sender_name: "",
+                        sender_email: "",
+                        message: "",
+                    });
+                    setTimeout(() => {
+                        setButtonText({
+                            primary: "Send Message",
+                            secondary: "Click to send",
+                        });
+                    }, 5000);
+                    console.log(result);
                 },
                 (error) => {
-                    console.log(error.text);
+                    setButtonText({
+                        primary: "Error",
+                        secondary: "Please try again",
+                    });
+                    setTimeout(() => {
+                        setButtonText({
+                            primary: "Send Message",
+                            secondary: "Click to send",
+                        });
+                    }, 5000);
+                    console.error(error);
                 }
             );
     };
@@ -47,12 +97,29 @@ export default function Contact() {
                     },
                 }}
                 className="max-w-lg overflow-hidden mx-auto text-4xl min-h-[85vh] flex flex-col justify-center"
-                ref={form}
                 onSubmit={sendEmail}
             >
-                <TextInput type="text" name="user_name" label="Name" />
-                <TextInput type="email" name="user_email" label="Email" />
-                <TextInput type="textarea" name="message" label="Message" />
+                <TextInput
+                    value={formData.sender_name}
+                    setValue={setFormData}
+                    type="text"
+                    name="sender_name"
+                    label="Name"
+                />
+                <TextInput
+                    value={formData.sender_email}
+                    setValue={setFormData}
+                    type="email"
+                    name="sender_email"
+                    label="Email"
+                />
+                <TextInput
+                    value={formData.message}
+                    setValue={setFormData}
+                    type="textarea"
+                    name="message"
+                    label="Message"
+                />
                 <motion.button
                     variants={{
                         pageInitial: {
@@ -72,11 +139,11 @@ export default function Contact() {
                             y: 100,
                         },
                     }}
-                    data-content="Click to send"
+                    data-content={buttonText.secondary}
                     className="w-full mt-4 text-primary text-5xl font-bebas px-4 py-1 before:bg-secondary before:text-dark before:text-4xl border-2 border-current inline-block overflow-hidden relative before:content-[attr(data-content)] before:flex before:justify-center before:items-center before:absolute before:inset-0 before:transition-transform before:duration-300 before:ease-spring before:transform before:translate-x-full hover:before:translate-x-0"
                     type="submit"
                 >
-                    Send Message
+                    {buttonText.primary}
                 </motion.button>
             </motion.form>
         </PageTransitionContainer>

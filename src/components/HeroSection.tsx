@@ -12,7 +12,7 @@ import useElementHeight from "../hooks/useElementHeight";
 import ScrollDownArrow from "./ScrollDownArrow";
 
 export default function HeroSection() {
-    const { scrollYProgress } = useScroll();
+    const { scrollY } = useScroll();
     const scrollRef = useRef(null);
     const { height: sectionHeight } = useElementHeight(scrollRef);
     const { height: fullPageHeight } = useElementHeight();
@@ -21,16 +21,18 @@ export default function HeroSection() {
         fullPageHeight === 0 ? 0 : sectionHeight / fullPageHeight;
 
     const physics = { damping: 15, mass: 0.27, stiffness: 55 };
+    console.log(scrollY.get());
+
     const dashScale = useSpring(
-        useTransform(scrollYProgress, [0, sectionHeightPercent], [1.75, 4]),
+        useTransform(scrollY, [0, sectionHeightPercent], [1.75, 4]),
         physics
     );
     const leftTextPosition = useSpring(
-        useTransform(scrollYProgress, [0, sectionHeightPercent], [0, -200]),
+        useTransform(scrollY, [0, sectionHeightPercent], [0, -200]),
         physics
     );
     const rightTextPosition = useSpring(
-        useTransform(scrollYProgress, [0, sectionHeightPercent], [0, 230]),
+        useTransform(scrollY, [0, sectionHeightPercent], [0, 230]),
         physics
     );
 

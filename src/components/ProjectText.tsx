@@ -22,7 +22,7 @@ export default function ProjectText({ project, index }: ProjectTextProps) {
     const scrollStart =
         fullPageHeight === 0
             ? 0
-            : (headingTop - window.innerHeight * 0.9) / fullPageHeight;
+            : (headingTop - window.innerHeight * 0.75) / fullPageHeight;
     const scrollEnd =
         fullPageHeight === 0
             ? 0

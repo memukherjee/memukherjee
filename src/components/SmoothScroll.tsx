@@ -37,7 +37,7 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
         return () => {
             body.style.height = "";
         };
-    }, [pageHeight, location]);
+    }, [pageHeight, location.pathname]);
 
     return (
         <>

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import HorizontalLine from "./HorizontalLine";
-import SlideUpText from "./SlideUpText";
 import { DIRECTION } from "../utils/constants";
 import SpringButton from "./SpringButton";
 import { about } from "../assets/portfolio";
+import TextLoop from "./TextLoop";
 
 export default function ContactSection() {
     const contactText =
@@ -24,12 +24,7 @@ export default function ContactSection() {
             <div className="lower">
                 <HorizontalLine />
                 <Link to="contact">
-                    <h1 className="relative uppercase text-giant font-bebas whitespace-nowrap w-fit my-8 flex justify-center items-center group/heading animate-loop-text hover:pause-animation">
-                        <span aria-hidden="true">
-                            <SlideUpText text={contactText} />
-                        </span>
-                        &nbsp; <SlideUpText text={contactText} /> &nbsp;
-                    </h1>
+                    <TextLoop text={contactText} />
                 </Link>
                 <HorizontalLine direction={DIRECTION.RIGHT} />
             </div>

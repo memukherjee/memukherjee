@@ -1,7 +1,37 @@
+import {motion} from "framer-motion";
+import PageTransitionContainer from "../components/PageTransitionContainer";
+
 export default function NotFound() {
     return (
-        <div className="min-h-screen text-center">
-            <span className="text-primary text-giant font-bebas absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4">404 Not Found</span>
-        </div>
+        <PageTransitionContainer className="min-h-screen text-center">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 overflow-hidden">
+                <motion.span
+                variants={{
+                    pageInitial: {
+                        opacity: 0,
+                        y: 100,
+                    },
+                    pageAnimate: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            duration: 0.35,
+                            ease: "easeInOut",
+                        },
+                    },
+                    pageExit: {
+                        opacity: 0,
+                        y: -100,
+                        transition: {
+                            duration: 0.35,
+                            ease: "easeInOut",
+                        },
+                    },
+                }}
+                className="inline-block text-primary text-giant font-bebas ">
+                    404 Not Found
+                </motion.span>
+            </div>
+        </PageTransitionContainer>
     );
 }

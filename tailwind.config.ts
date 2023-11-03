@@ -37,6 +37,9 @@ export default {
                 accent: "#EBD762",
                 light: "#aaa",
             },
+            backgroundImage: {
+                "conic-gradient": "conic-gradient(from var(--conic-border-angle), #111, #222 50%, #111), conic-gradient(from var(--conic-border-angle), transparent 20%, #777, #aaa)",
+            },
             transitionTimingFunction: {
                 "in": "cubic-bezier(0.4, 0, 1, 1)",
                 "out": "cubic-bezier(0, 0, 0.2, 1)",
@@ -49,6 +52,7 @@ export default {
                     "infinite-arrow 1s cubic-bezier(.175,.885,.32,1.275) infinite",
                 spin: "spin 5s linear infinite",
                 "loop-text": "loop-text 15s linear infinite",
+                "bg-spin": "bg-spin 7s linear infinite",
             },
             keyframes: {
                 "border-pulse": {
@@ -70,6 +74,11 @@ export default {
                     },
                     "100%": {
                         transform: "translateX(-50%)",
+                    },
+                },
+                "bg-spin": {
+                    "to": {
+                        "--conic-border-angle": "1turn",
                     },
                 },
             },

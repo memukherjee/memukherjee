@@ -4,16 +4,11 @@ import {
     FaLinkedin,
     FaTwitter,
     FaCartShopping,
-    FaLinkSlash,
-    FaClipboardList,
     FaImages,
-    FaBlog,
     FaRobot,
-    FaFilm,
     FaHandScissors,
     FaChrome,
     FaGraduationCap,
-    FaGamepad,
     FaJava,
     FaHtml5,
     FaCss3,
@@ -23,10 +18,26 @@ import {
     FaGitAlt,
     FaCuttlefish,
 } from "react-icons/fa6";
-import { FaJsSquare } from "react-icons/fa";
+import { FaJsSquare, FaTasks } from "react-icons/fa";
+import { GiQuillInk, GiRetroController } from "react-icons/gi";
+import { PiFilmSlateLight } from "react-icons/pi";
+import { TbLink } from "react-icons/tb";
 import { SiMui, SiJquery, SiMongodb, SiMysql } from "react-icons/si";
 import { DiNodejs } from "react-icons/di";
 import { BsFiletypeJs } from "react-icons/bs";
+import { IconType } from "react-icons";
+import ElegantApparelsImg from "../assets/images/Elegant-Apparels.png";
+import URLShortener from "../assets/images/URL-Shortener.png";
+import TwitterClone from "../assets/images/Twitter-Clone.png";
+import ImageGallery from "../assets/images/Image-Gallery.png";
+import DailyJournal from "../assets/images/Daily-Journal.png";
+import DiscordBot from "../assets/images/Discord-Bot.png";
+import OMDB from "../assets/images/OMDB.png";
+import StonePaperScissor from "../assets/images/Stone-Paper-Scissor-App.jpg";
+import DunkJokes from "../assets/images/Dunk-Jokes-Chrome-Extension.png";
+import ToDoList from "../assets/images/To-Do-List.png";
+import CollegeLMS from "../assets/images/College-LMS.png";
+import SimonGame from "../assets/images/Simon.png";
 
 export const about = {
     fullName: "Akash Mukherjee",
@@ -72,7 +83,20 @@ export const about = {
     ],
 };
 
-export const projects = [
+type ProjectType = {
+    name: string;
+    slug: string;
+    about: string;
+    genere: string;
+    stack: string;
+    icon: IconType;
+    description: string;
+    technologies: string[];
+    sourceCode?: string;
+    livePreview?: string;
+    image?: string;
+};
+export const projects: ProjectType[] = [
     {
         name: "Elegant Apparels",
         slug: "elegant-apparels",
@@ -93,6 +117,7 @@ export const projects = [
         ],
         livePreview: "https://elegantapparels.netlify.app",
         sourceCode: "https://github.com/memukherjee/e-commerce-app",
+        image: ElegantApparelsImg,
     },
     {
         name: "shortURL",
@@ -100,7 +125,7 @@ export const projects = [
         about: "URL Shortener Application",
         genere: "Full Stack Development",
         stack: "MERN",
-        icon: FaLinkSlash,
+        icon: TbLink,
         description:
             "MERN stack based URL shortener application. It shortens the long URL and provides a short URL which can be used to redirect to the original URL.",
         technologies: [
@@ -112,6 +137,7 @@ export const projects = [
         ],
         sourceCode: "https://github.com/memukherjee/url-shortener",
         livePreview: "https://me-shorturl.netlify.app/",
+        image: URLShortener,
     },
     {
         name: "Twitter-2.0",
@@ -126,18 +152,7 @@ export const projects = [
         sourceCode:
             "https://github.com/memukherjee/Nagarro-Projects/tree/main/twitter-clone",
         livePreview: "https://me-twitter.up.railway.app",
-    },
-    {
-        name: "To Do App",
-        slug: "to-do-app",
-        about: "Task Management Application",
-        genere: "Full Stack Development",
-        stack: "MERN",
-        icon: FaClipboardList,
-        description:
-            "Multiuser task management application to manage day to day tasks.",
-        technologies: ["React", "NodeJS", "ExpressJS", "MongoDB", "Bootstrap"],
-        sourceCode: "https://github.com/MERN-To-Do-App",
+        image: TwitterClone,
     },
     {
         name: "Gallery",
@@ -150,6 +165,7 @@ export const projects = [
         technologies: ["React", "Javascript", "CSS"],
         sourceCode: "https://github.com/memukherjee/image-gallery",
         livePreview: "https://memukherjee.github.io/image-gallery/",
+        image: ImageGallery,
     },
     {
         name: "Daily Journal",
@@ -157,12 +173,13 @@ export const projects = [
         about: "Personal Blog Website",
         genere: "Full Stack Development",
         stack: "Express + EJS + MongoDB",
-        icon: FaBlog,
+        icon: GiQuillInk,
         description:
             "Blog website to feature my thoughts. Used the concept of dynamic routing.",
         technologies: ["EJS", "NodeJS", "ExpressJS", "MongoDB"],
         sourceCode: "https://github.com/memukherjee/Blog-Website",
-        livePreview: "https://akash-blogsite.herokuapp.com/",
+        livePreview: "https://me-daily-journal.up.railway.app",
+        image: DailyJournal,
     },
     {
         name: "PauL Bot",
@@ -177,6 +194,7 @@ export const projects = [
         sourceCode: "https://github.com/memukherjee/Discord-Bot",
         livePreview:
             "https://discord.com/oauth2/authorize?client_id=935102650754678784&scope=bot",
+        image: DiscordBot,
     },
     {
         name: "OMDB",
@@ -184,13 +202,14 @@ export const projects = [
         about: "Movie Finder",
         genere: "Frontend Development",
         stack: "JavaScript + Bootstrap",
-        icon: FaFilm,
+        icon: PiFilmSlateLight,
         description:
             "Frontend application to search for movies using OMDB API. Shows the details of the movie like poster, description, release year.",
         technologies: ["HTML", "Javascript", "Bootstrap"],
         sourceCode:
             "https://github.com/memukherjee/Nagarro-Projects/tree/main/OMDB-api",
         livePreview: "https://memukherjee.github.io/Nagarro-Projects/OMDB-api/",
+        image: OMDB,
     },
     {
         name: "Stone Paper Scissor",
@@ -204,6 +223,7 @@ export const projects = [
         technologies: ["Java", "Gradle", "XML"],
         sourceCode:
             "https://github.com/memukherjee/Stone-Paper-Scissor-Android-App",
+        image: StonePaperScissor,
     },
     {
         name: "Dunk Jokes",
@@ -216,6 +236,7 @@ export const projects = [
             "Chrome extension to generate random meme and jokes using api call.",
         technologies: ["HTML", "Javascript"],
         sourceCode: "https://github.com/memukherjee/Dunk-Jokes",
+        image: DunkJokes,
     },
     {
         name: "To Do List",
@@ -223,12 +244,13 @@ export const projects = [
         about: "Task Management Application",
         genere: "Full Stack Development",
         stack: "Express + EJS + MongoDB",
-        icon: FaClipboardList,
+        icon: FaTasks,
         description:
             "Task management application to perform CRUD operations in task lists of different names in dynamic routes.",
         technologies: ["EJS", "NodeJS", "MongoDB", "ExpressJS"],
         sourceCode: "https://github.com/memukherjee/ToDoList-Node-EJS-MongoDB",
-        livePreview: "https://akash-todolist.herokuapp.com/",
+        livePreview: "https://me-todo.up.railway.app/",
+        image: ToDoList,
     },
     {
         name: "College LMS",
@@ -241,7 +263,8 @@ export const projects = [
             "Learning management system for colleges. It's a group project and my contribution in that is to design the html pages.",
         technologies: ["HTML", "CSS", "Javascript", "PHP", "MySQL"],
         sourceCode: "https://github.com/memukherjee/College-LMS",
-        livePreview: "https://collegelmsystem.000webhostapp.com/",
+        // livePreview: "https://collegelmsystem.000webhostapp.com/",
+        image: CollegeLMS,
     },
     {
         name: "Simon Game",
@@ -249,12 +272,13 @@ export const projects = [
         about: "Retro Memory Game",
         genere: "Frontend Development",
         stack: "HTML + Vanilla CSS + JQuery",
-        icon: FaGamepad,
+        icon: GiRetroController,
         description:
             "It is a memory game based upon color pattern memorization.",
         technologies: ["HTML", "CSS", "JQuery"],
         sourceCode: "https://github.com/memukherjee/simon",
         livePreview: "https://memukherjee.github.io/simon/",
+        image: SimonGame,
     },
 ];
 

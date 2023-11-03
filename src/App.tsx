@@ -21,10 +21,10 @@ function App() {
     const location = useLocation();
     useTitle(about.fullName);
     return (
-        <AnimatePresence mode="wait">
-            <Layout>
-                <Navbar />
-                <Suspense fallback={<Loader />}>
+        <Layout>
+            <Navbar />
+            <Suspense fallback={<Loader />}>
+                <AnimatePresence mode="wait">
                     <Routes location={location} key={location.pathname}>
                         <Route index element={<Home />} />
                         <Route path="contact" element={<Contact />} />
@@ -34,10 +34,10 @@ function App() {
                         />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
-                </Suspense>
-                <Footer />
-            </Layout>
-        </AnimatePresence>
+                </AnimatePresence>
+            </Suspense>
+            <Footer />
+        </Layout>
     );
 }
 

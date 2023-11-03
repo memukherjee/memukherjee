@@ -1,9 +1,15 @@
+import styles from "../styles/Loader.module.css";
+
 export default function Loader() {
     return (
-        <div className="min-h-screen text-center">
-            <span className="text-primary text-giant font-bebas absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4">
-                Loading...
-            </span>
+        <div className={`${styles.loadingContainer} min-h-screen text-center`}>
+            <div className={styles.loadingspinner}>
+                <div className={styles.square1}></div>
+                <div className={styles.square2}></div>
+                <div className={styles.square3}></div>
+                <div className={styles.square4}></div>
+                <div className={styles.square5}></div>
+            </div>
         </div>
     );
 }

@@ -19,7 +19,6 @@ const pageVariants = {
         transition: {
             duration: 0.5,
             ease: "easeInOut",
-            // delayChildren: 0.35,
         },
     },
     pageExit: {
@@ -39,7 +38,7 @@ export default function PageTransitionContainer({
 }: PageTransitionContainerProps) {
     return (
         <motion.div
-            className={className}
+            className={`${className}`}
             initial="pageInitial"
             animate="pageAnimate"
             exit="pageExit"

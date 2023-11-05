@@ -10,13 +10,14 @@ import { about } from "../assets/portfolio";
 import HeroText from "./HeroText";
 import ScrollDownArrow from "./ScrollDownArrow";
 import useElementPosition from "../hooks/useElementPosition";
+import useWindowSize from "../hooks/useWindowSize";
 
 export default function HeroSection() {
     const heroRef = useRef<HTMLDivElement>(null);
     const { elementPosition } = useElementPosition(heroRef);
     const { bottom: heroBottom } = elementPosition;
     const scrollEnd = heroBottom + window.innerHeight * 0.75;
-    console.log(scrollEnd);
+    const { isLg, isMd } = useWindowSize();
 
     const physics = { damping: 15, mass: 0.27, stiffness: 55 };
 
@@ -42,40 +43,57 @@ export default function HeroSection() {
             y: 0,
         },
         pageExit: {
-            y: "100%",
+            y: "-100%",
         },
     };
 
     return (
-        <section id="hero" className="hero overflow-hidde mb-16">
+        <section id="hero" className="hero overflow-hidde mb-16 px-4 lg:px-0">
             <div
                 ref={heroRef}
-                className="top-container-wrapper overflow-hidden"
+                className="top-container-wrapper overflow-hidden pr-4 lg:pr-0"
             >
                 <motion.div
                     variants={heroContainerVariant}
                     transition={{ duration: 0.35, delay: 0.35, ease: easeOut }}
-                    className="top-container flex justify-between items-start px-12"
+                    className="top-container flex flex-wrap lg:flex-nowrap justify-between items-start lg:px-12"
                 >
                     <motion.span
-                        style={{
-                            x: leftTextPosition,
-                        }}
+                        style={
+                            isLg()
+                                ? {
+                                    x: leftTextPosition,
+                                }
+                                : {}
+                        }
                     >
                         <HeroText text={about.role.split(" ")[0]} />
                     </motion.span>
                     <motion.span
-                        style={{
-                            scaleX: dashScale,
-                        }}
-                        className="text-hero leading-hero tracking-hero font-bebas hover:text-secondary transition-colors duration-200 ease-in-out"
+                        style={
+                            isLg()
+                                ? {
+                                    scaleX: dashScale,
+                                }:isMd() ? {
+                                    scaleX: 2,
+                                }
+                                : {
+                                    scaleX: 1.75,
+                                    transformOrigin: "right",
+                                }
+                        }
+                        className="text-[10rem] md:text-[12rem] lg:text-hero leading-none lg:leading-hero tracking-tighter lg:tracking-hero font-bebas hover:text-secondary transition-colors duration-200 ease-in-out"
                     >
                         &mdash;
                     </motion.span>
                     <motion.span
-                        style={{
-                            x: rightTextPosition,
-                        }}
+                        style={
+                            isLg()
+                                ? {
+                                    x: rightTextPosition,
+                                }
+                                : {}
+                        }
                     >
                         <HeroText text={about.role.split(" ")[1]} />
                     </motion.span>
@@ -86,7 +104,7 @@ export default function HeroSection() {
                 <motion.div
                     variants={heroContainerVariant}
                     transition={{ duration: 0.35, delay: 0.7, ease: easeOut }}
-                    className="bottom-container flex justify-between items-start gap-8 px-12"
+                    className="bottom-container flex flex-wrap lg:flex-nowrap justify-between items-stretch gap-8 lg:px-12"
                 >
                     <span>
                         <HeroText text={about.role.split(" ")[2]} />
@@ -99,7 +117,7 @@ export default function HeroSection() {
                             delay: 0.8,
                             ease: easeOut,
                         }}
-                        className="about-me min-h-[270px] grow flex flex-col justify-between flex-wrap"
+                        className="about-me min-w-[300px] grow flex flex-col justify-between flex-wrap gap-y-4 pb-12"
                     >
                         <p className="whitespace-break-spaces text-justify">
                             <span className="text-primary text-sm uppercase font-semibold me-3">

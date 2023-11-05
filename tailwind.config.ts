@@ -17,10 +17,10 @@ export default {
                 lg: "1.25rem",
                 xl: "1.75rem",
                 giant: "10rem",
-                hero: "22rem",
+                hero: "min(22rem, 22vw)",
             },
             lineHeight: {
-                hero: "20rem",
+                hero: "min(20rem, 20vw)",
             },
             letterSpacing: {
                 hero: "-1rem",
@@ -38,13 +38,14 @@ export default {
                 light: "#aaa",
             },
             backgroundImage: {
-                "conic-gradient": "conic-gradient(from var(--conic-border-angle), #111, #222 50%, #111), conic-gradient(from var(--conic-border-angle), transparent 20%, #777, #aaa)",
+                "conic-gradient":
+                    "conic-gradient(from var(--conic-border-angle), #111, #222 50%, #111), conic-gradient(from var(--conic-border-angle), transparent 20%, #777, #aaa)",
             },
             transitionTimingFunction: {
-                "in": "cubic-bezier(0.4, 0, 1, 1)",
-                "out": "cubic-bezier(0, 0, 0.2, 1)",
+                in: "cubic-bezier(0.4, 0, 1, 1)",
+                out: "cubic-bezier(0, 0, 0.2, 1)",
                 "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
-                "spring": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+                spring: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
             },
             animation: {
                 "border-pulse": "border-pulse 5s ease-in-out infinite",
@@ -77,7 +78,7 @@ export default {
                     },
                 },
                 "bg-spin": {
-                    "to": {
+                    to: {
                         "--conic-border-angle": "1turn",
                     },
                 },
@@ -96,4 +97,7 @@ export default {
             });
         }),
     ],
+    future: {
+        hoverOnlyWhenSupported: true,
+    },
 };

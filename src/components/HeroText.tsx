@@ -6,7 +6,7 @@ type HeroTextProps = {
 export default function HeroText({ text, className = "" }: HeroTextProps) {
     return (
         <div
-            className={`text-hero leading-hero tracking-hero font-bebas whitespace-nowrap ${className}`}
+            className={`text-[10rem] md:text-[12rem] lg:text-hero leading-none lg:leading-hero tracking-tighter lg:tracking-hero font-bebas lg:whitespace-nowrap ${className}`}
         >
             {text.split("").map((letter, index) => {
                 return (

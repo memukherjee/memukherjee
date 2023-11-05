@@ -79,7 +79,7 @@ export default function ProjectText({ project, index }: ProjectTextProps) {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="border px-3 py-2 rounded-full inline-flex items-center justify-between gap-x-1"
+                        className="uppercase border-2 border-primary px-3 py-2 rounded-full inline-flex items-center justify-between gap-x-1"
                     >
                         Check it out
                         <span className="text-lg">

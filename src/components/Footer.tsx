@@ -22,12 +22,12 @@ export default function Footer() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <footer className="flex justify-between items-center px-6 py-12">
+        <footer className="flex flex-col gap-y-2 md:flex-row justify-between items-center px-6 py-12">
             <span className="local-time uppercase flex gap-4 text-base">
                 <span>{`${about.address.city}, ${about.address.countryCode}`}</span>
                 <span className="text-secondary">{localTime}</span>
             </span>
-            <span className="socials flex justify-between items-center gap-4">
+            <span className="socials flex flex-wrap md:flex-nowrap justify-center lg:justify-between items-center gap-4">
                 {socials.map((social, index) => (
                     <LinkButton key={index} to={social.url}>
                         {social.name}

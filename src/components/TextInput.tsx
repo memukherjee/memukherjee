@@ -49,7 +49,7 @@ export default function TextInput({
                 {type === "textarea" ? (
                     <>
                         <label
-                            className="text-5xl h-16 tracking-wide bg-secondary text-dark px-2 py-1 leading-none inline-flex font-bebas items-center"
+                            className="text-3xl lg:text-5xl h-16 tracking-wide bg-secondary text-dark px-2 py-1 leading-none inline-flex font-bebas items-center"
                             htmlFor={name}
                         >
                             {label}
@@ -63,14 +63,14 @@ export default function TextInput({
                                     [name]: e.target.value,
                                 }))
                             }
-                            className="w-full py-1 h-16 ps-2 text-lg leading-tight bg-transparent border-b-2 border-l-2 border-primary resize-none outline-none caret-primary"
+                            className="w-full py-1 h-16 ps-2 text-base lg:text-lg leading-tight bg-transparent border-b-2 border-l-2 border-primary resize-none outline-none caret-primary"
                             name={name}
                         />
                     </>
                 ) : (
                     <>
                         <label
-                            className="text-5xl h-16 tracking-wide bg-secondary text-dark px-2 py-1 leading-none inline-flex items-center font-bebas"
+                            className="text-3xl lg:text-5xl h-16 tracking-wide bg-secondary text-dark px-2 py-1 leading-none inline-flex items-center font-bebas"
                             htmlFor={name}
                         >
                             {label}

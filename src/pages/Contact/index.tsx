@@ -18,7 +18,11 @@ export default function Contact() {
 
     const sendEmail = (e: FormEvent) => {
         e.preventDefault();
-        if(!formData.sender_name || !formData.sender_email || !formData.message) {
+        if (
+            !formData.sender_name ||
+            !formData.sender_email ||
+            !formData.message
+        ) {
             setButtonText({
                 primary: "Empty Fields",
                 secondary: "Please fill out all fields",
@@ -96,7 +100,7 @@ export default function Contact() {
                         opacity: 0,
                     },
                 }}
-                className="max-w-lg overflow-hidden mx-auto text-4xl min-h-[85vh] flex flex-col justify-center"
+                className="max-w-lg overflow-hidden mx-auto text-2xl lg:text-4xl min-h-[75vh] md:min-h-[85vh] flex flex-col justify-center px-4"
                 onSubmit={sendEmail}
             >
                 <TextInput
@@ -124,7 +128,7 @@ export default function Contact() {
                     variants={{
                         pageInitial: {
                             opacity: 0,
-                            y: -100,
+                            y: 100,
                         },
                         pageAnimate: {
                             opacity: 1,
@@ -136,15 +140,38 @@ export default function Contact() {
                         },
                         pageExit: {
                             opacity: 0,
-                            y: 100,
+                            y: -100,
                         },
                     }}
                     data-content={buttonText.secondary}
-                    className="w-full mt-4 text-primary text-5xl font-bebas px-4 py-1 before:bg-secondary before:text-dark before:text-4xl border-2 border-current inline-block overflow-hidden relative before:content-[attr(data-content)] before:flex before:justify-center before:items-center before:absolute before:inset-0 before:transition-transform before:duration-300 before:ease-spring before:transform before:translate-x-full hover:before:translate-x-0"
+                    className="w-fit lg:w-full self-center mt-4 text-primary text-3xl font-bebas px-4 py-1 before:bg-secondary before:text-dark before:text-4xl border-2 border-current inline-block overflow-hidden relative lg:before:content-[attr(data-content)] before:flex before:justify-center before:items-center before:absolute before:inset-0 before:transition-transform before:duration-300 before:ease-spring before:transform before:translate-x-full hover:before:translate-x-0"
                     type="submit"
                 >
                     {buttonText.primary}
                 </motion.button>
+                <motion.span
+                    variants={{
+                        pageInitial: {
+                            opacity: 0,
+                            y: 100,
+                        },
+                        pageAnimate: {
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                duration: 0.35,
+                                ease: "easeInOut",
+                            },
+                        },
+                        pageExit: {
+                            opacity: 0,
+                            y: -100,
+                        },
+                    }}
+                    className="lg:hidden self-center text-sm uppercase font-normal"
+                >
+                    {buttonText.secondary}
+                </motion.span>
             </motion.form>
         </PageTransitionContainer>
     );

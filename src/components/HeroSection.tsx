@@ -8,30 +8,29 @@ import {
 import { useRef } from "react";
 import { about } from "../assets/portfolio";
 import HeroText from "./HeroText";
-import useElementHeight from "../hooks/useElementHeight";
 import ScrollDownArrow from "./ScrollDownArrow";
+import useElementPosition from "../hooks/useElementPosition";
 
 export default function HeroSection() {
-    const { scrollY } = useScroll();
-    const scrollRef = useRef(null);
-    const { height: sectionHeight } = useElementHeight(scrollRef);
-    const { height: fullPageHeight } = useElementHeight();
-
-    const sectionHeightPercent =
-        fullPageHeight === 0 ? 0 : sectionHeight / fullPageHeight;
+    const heroRef = useRef<HTMLDivElement>(null);
+    const { elementPosition } = useElementPosition(heroRef);
+    const { bottom: heroBottom } = elementPosition;
+    const scrollEnd = heroBottom + window.innerHeight * 0.75;
+    console.log(scrollEnd);
 
     const physics = { damping: 15, mass: 0.27, stiffness: 55 };
 
+    const { scrollY } = useScroll();
     const dashScale = useSpring(
-        useTransform(scrollY, [0, sectionHeightPercent], [1.75, 4]),
+        useTransform(scrollY, [0, scrollEnd], [1.75, 4]),
         physics
     );
     const leftTextPosition = useSpring(
-        useTransform(scrollY, [0, sectionHeightPercent], [0, -200]),
+        useTransform(scrollY, [0, scrollEnd], [0, -200]),
         physics
     );
     const rightTextPosition = useSpring(
-        useTransform(scrollY, [0, sectionHeightPercent], [0, 230]),
+        useTransform(scrollY, [0, scrollEnd], [0, 230]),
         physics
     );
 
@@ -48,12 +47,11 @@ export default function HeroSection() {
     };
 
     return (
-        <section
-            id="hero"
-            ref={scrollRef}
-            className="hero overflow-hidde mb-16"
-        >
-            <div className="top-container-wrapper overflow-hidden">
+        <section id="hero" className="hero overflow-hidde mb-16">
+            <div
+                ref={heroRef}
+                className="top-container-wrapper overflow-hidden"
+            >
                 <motion.div
                     variants={heroContainerVariant}
                     transition={{ duration: 0.35, delay: 0.35, ease: easeOut }}

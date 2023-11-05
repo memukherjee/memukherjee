@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import useElementPosition from "../hooks/useElementPosition";
-import useElementHeight from "../hooks/useElementHeight";
 import SlideUpText from "./SlideUpText";
 
 type ProjectTextProps = {
@@ -18,24 +17,17 @@ export default function ProjectText({ project, index }: ProjectTextProps) {
     const headingRef = useRef<HTMLHeadingElement>(null);
     const { elementPosition } = useElementPosition(headingRef);
     const { top: headingTop, bottom: headingBottom } = elementPosition;
-    const { height: fullPageHeight } = useElementHeight();
-    const scrollStart =
-        fullPageHeight === 0
-            ? 0
-            : (headingTop - window.innerHeight * 0.75) / fullPageHeight;
-    const scrollEnd =
-        fullPageHeight === 0
-            ? 0
-            : (headingBottom + window.innerHeight * 0.75) / fullPageHeight;
+    const scrollStart = headingTop - window.innerHeight * 0.9;
+    const scrollEnd = headingBottom + window.innerHeight * 0.9;
 
-    const { scrollYProgress } = useScroll();
+    const { scrollY } = useScroll();
     const physics = { damping: 15, mass: 0.27, stiffness: 55 };
     const leftMovingTextPosition = useSpring(
-        useTransform(scrollYProgress, [scrollStart, scrollEnd], [0, -800]),
+        useTransform(scrollY, [scrollStart, scrollEnd], [0, -800]),
         physics
     );
     const rightMovingTextPosition = useSpring(
-        useTransform(scrollYProgress, [scrollStart, scrollEnd], [-400, 400]),
+        useTransform(scrollY, [scrollStart, scrollEnd], [-400, 400]),
         physics
     );
 

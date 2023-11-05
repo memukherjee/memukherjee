@@ -10,7 +10,7 @@ export default function ContactSection() {
     const contactText =
         "LET'S TALK — LET'S COLLABORATE — SAY HELLO — WANNA BE STARTING SOMETHING?";
     return (
-        <section className="px-12 mb-40 text-center">
+        <section className="px-4 lg:px-12 mb-40 text-center">
             <div className="upper max-w-md mx-auto py-24 text-secondary text-base">
                 <motion.p
                     initial={{ opacity: 0, y: 100 }}
@@ -24,7 +24,7 @@ export default function ContactSection() {
             <div className="lower">
                 <HorizontalLine />
                 <Link to="contact">
-                    <TextLoop text={contactText} />
+                    <TextLoop className="text-[6rem] leading-[.75]" text={contactText} />
                 </Link>
                 <HorizontalLine direction={DIRECTION.RIGHT} />
             </div>

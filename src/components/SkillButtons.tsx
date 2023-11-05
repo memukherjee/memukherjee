@@ -3,6 +3,7 @@ import { FaRegCheckCircle } from "react-icons/fa";
 import { Dispatch, SetStateAction } from "react";
 import { motion } from "framer-motion";
 import { skills } from "../assets/portfolio";
+import useWindowSize from "../hooks/useWindowSize";
 
 type SkillButtonsProps = {
     selectedSkill: number;
@@ -43,6 +44,7 @@ export default function SkillButtons({
     selectedSkill,
     setSelectedSkill,
 }: SkillButtonsProps) {
+    const { isLg } = useWindowSize();
     return (
         <motion.ul
             initial="initial"
@@ -54,6 +56,11 @@ export default function SkillButtons({
             {skills.map((skill, index) => (
                 <motion.li
                     variants={skillButtonVariants}
+                    style={
+                        isLg() ? {}:{
+                            color: skill.color,
+                        }
+                    }
                     className="text-secondary border border-current rounded-3xl px-4 cursor-pointer hover:bg-accent hover:text-dark transition-colors duration-200 ease-in-out mb-4 grow flex justify-between items-center"
                     key={index}
                     onClick={() => {
@@ -63,11 +70,17 @@ export default function SkillButtons({
                     <span className="skill-name inline-block py-3 text-base font-normal">
                         {skill.name}
                     </span>
-                    {index === selectedSkill ? (
+                    {isLg() ? index === selectedSkill ? (
                         <FaRegCheckCircle className="inline-block text-2xl" />
                     ) : (
                         <BiCircle className="inline-block text-2xl" />
-                    )}
+                    )
+                    : (
+                        <span className="inline-block text-2xl">
+                            {skill.icon()}
+                        </span>
+                    )
+                    }
                     <input
                         type="radio"
                         name="skill"

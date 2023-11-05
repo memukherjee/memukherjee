@@ -17,7 +17,7 @@ export default function SpringButton({
     return (
         <Link
             data-content={followUpText}
-            className={`resume-link ${className} border-2 border-current inline-block overflow-hidden relative before:content-[attr(data-content)] before:flex before:justify-center before:items-center before:absolute before:inset-0 before:transition-transform before:duration-300 before:ease-spring before:transform before:translate-x-full hover:before:translate-x-0`}
+            className={`resume-link ${className} border-2 border-current inline-block overflow-hidden relative lg:before:content-[attr(data-content)] before:flex before:justify-center before:items-center before:absolute before:inset-0 before:transition-transform before:duration-300 before:ease-spring before:transform before:translate-x-full hover:before:translate-x-0`}
             to={href}
             rel="noreferrer"
             target="_blank"

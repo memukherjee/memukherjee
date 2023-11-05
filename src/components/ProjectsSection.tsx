@@ -6,7 +6,7 @@ import { Fragment } from "react";
 
 export default function ProjectsSection() {
     return (
-        <section id="projects-section" className="projects-section px-12 mb-40">
+        <section id="projects-section" className="projects-section px-4 lg:px-12 mb-40">
             {projects.map((project, index) => (
                 <Fragment key={index}>
                     <HorizontalLine
@@ -15,7 +15,7 @@ export default function ProjectsSection() {
                         }
                     />
                     <div className="project-box py-4 group">
-                        <header className="mt-6 flex justify-end items-center font-semibold text-sm uppercase pe-40">
+                        <header className="mt-6 flex justify-end items-center font-semibold text-sm text-secondary lg:text-primary uppercase mb-4 md:mb-0 md:pe-40">
                             <div
                                 style={
                                     index !== 0
@@ -24,7 +24,7 @@ export default function ProjectsSection() {
                                         }
                                         : {}
                                 }
-                                className="w-full max-w-4xl flex justify-between items-center"
+                                className="w-full md:max-w-4xl flex justify-between items-center"
                             >
                                 {index === 0 && (
                                     <p className="whitespace-pre">

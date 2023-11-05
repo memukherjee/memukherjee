@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import useElementPosition from "../hooks/useElementPosition";
 import SlideUpText from "./SlideUpText";
+import useWindowSize from "../hooks/useWindowSize";
+import { CgArrowTopRight } from "react-icons/cg";
 
 type ProjectTextProps = {
     project: {
@@ -31,16 +33,18 @@ export default function ProjectText({ project, index }: ProjectTextProps) {
         physics
     );
 
+    const { isLg } = useWindowSize();
+
     const text = `${project.name}-${project.about}`;
 
-    return (
+    return isLg() ? (
         <Link
             style={{
                 textAlign: index % 2 === 0 ? "left" : "right",
             }}
             to={`/projects/${project.slug}`}
         >
-            <motion.h1
+            <motion.h3
                 ref={headingRef}
                 style={{
                     x:
@@ -50,7 +54,40 @@ export default function ProjectText({ project, index }: ProjectTextProps) {
                 }}
             >
                 <SlideUpText text={text} />
-            </motion.h1>
+            </motion.h3>
         </Link>
+    ) : (
+        <>
+            <motion.h3 className="font-bebas text-[6rem] leading-none flex flex-wrap justify-start gap-x-2">
+                {text.split(" ").map((word, index) => (
+                    <motion.span
+                        key={index}
+                        initial={{ opacity: 0, y: "100%" }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                    >
+                        {word}
+                    </motion.span>
+                ))}
+                <Link
+                    className="text-primary text-base font-sans inline-block ml-auto my-3"
+                    to={`/projects/${project.slug}`}
+                >
+                    <motion.span
+                        initial={{ opacity: 0, y: "100%" }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="border px-3 py-2 rounded-full inline-flex items-center justify-between gap-x-1"
+                    >
+                        Check it out
+                        <span className="text-lg">
+                            <CgArrowTopRight />
+                        </span>
+                    </motion.span>
+                </Link>
+            </motion.h3>
+        </>
     );
 }

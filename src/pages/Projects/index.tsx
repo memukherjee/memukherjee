@@ -31,12 +31,12 @@ export default function Projects() {
 
     return currentProject ? (
         <PageTransitionContainer>
-            <section>
+            <section className="mb-24">
                 <div
                     style={{
                         backgroundImage: `url(${currentProject.image})`,
                     }}
-                    className="parallax-hero-img relative overflow-hidden w-full h-[60dvh] bg-cover bg-center"
+                    className="parallax-hero-img relative overflow-hidden w-full h-[25vh] md:h-[60dvh] bg-cover bg-center"
                 >
                     <div className="blur-backdrop absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm" />
                     <motion.img
@@ -44,34 +44,34 @@ export default function Projects() {
                             y: spring,
                             x: "-50%",
                         }}
-                        className="h-[calc(100%+95px)] absolute bottom-0 left-1/2"
+                        className="h-[calc(100%+181px)] md:h-[calc(100%+95px)] absolute bottom-0 left-1/2"
                         src={currentProject.image}
                         alt={currentProject.name}
                     />
                 </div>
                 <div className="top-container overflow-hidden">
                     <TextLoop
-                        className="text-[16rem] leading-[.75]"
+                        className="text-[6rem] md:text-[10rem] lg:text-[16rem] leading-[.75]"
                         text={`${currentProject.name} - ${currentProject.about}`}
                         speed={0.4}
                     />
                 </div>
-                <div className="bottom-container px-12 flex justify-between gap-x-24">
-                    <div className="skills text-lg text-center font-semibold flex flex-wrap justify-start items-start gap-x-2 grow">
+                <div className="bottom-container px-4 lg:px-12 flex flex-col lg:flex-row justify-between gap-y-8 lg:gap-x-24">
+                    <div className="skills text-lg text-center font-semibold flex flex-wrap justify-between lg:justify-start items-start gap-2 grow">
                         {currentProject.technologies.map((skill, index) => (
                             <span
                                 key={index}
-                                className="px-4 py-2 bg-conic-gradient bg-[length:97%_96%,cover] bg-center bg-no-repeat animate-bg-spin"
+                                className="px-4 py-2 grow lg:grow-0 bg-conic-gradient bg-[length:97%_96%,cover] bg-center bg-no-repeat animate-bg-spin"
                             >
                                 {skill}
                             </span>
                         ))}
                     </div>
-                    <div className="project-description max-w-sm">
+                    <div className="project-description lg:max-w-sm">
                         <p className="text-secondary text-base text-justify mb-12">
                             {currentProject.description}
                         </p>
-                        <div className="project-links flex justify-between items-center">
+                        <div className="project-links flex flex-wrap lg:flex-nowrap justify-end gap-x-4 lg:justify-between items-center">
                             {currentProject.livePreview && (
                                 <ProjectLink
                                     Icon={FaLink}
@@ -91,7 +91,7 @@ export default function Projects() {
                 </div>
                 {currentProject.livePreview &&
                     currentProject.slug !== "paul-bot" && (
-                        <div className="preview-wrapper mt-24">
+                        <div className="preview-wrapper mt-24 hidden lg:block">
                             <div className="preview relative px-12 flex justify-center">
                                 <AnimatePresence>
                                     {!previewVisible && (

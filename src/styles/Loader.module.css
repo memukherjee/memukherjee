@@ -9,6 +9,17 @@
     --square: 60px;
     --offset: 70px;
 
+    @media screen and (max-width: 1024px) and (min-width: 769px) {
+        --square: 50px;
+        --offset: 60px;
+    }
+
+    @media screen and (max-width: 768px) {
+        --square: 40px;
+        --offset: 50px;
+    }
+
+
     --duration: 2.4s;
     --delay: 0.2s;
     --timing-function: ease-in-out;

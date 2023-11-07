@@ -27,17 +27,29 @@ import { DiNodejs } from "react-icons/di";
 import { BsFiletypeJs } from "react-icons/bs";
 import { IconType } from "react-icons";
 import ElegantApparelsImg from "../assets/images/Elegant-Apparels.png";
+import ElegantApparelsImgPlaceholder from "../assets/images/Elegant-Apparels-small.png";
 import URLShortener from "../assets/images/URL-Shortener.png";
+import URLShortenerPlaceholder from "../assets/images/URL-Shortener-small.png";
 import TwitterClone from "../assets/images/Twitter-Clone.png";
+import TwitterClonePlaceholder from "../assets/images/Twitter-Clone-small.png";
 import ImageGallery from "../assets/images/Image-Gallery.png";
+import ImageGalleryPlaceholder from "../assets/images/Image-Gallery-small.png";
 import DailyJournal from "../assets/images/Daily-Journal.png";
+import DailyJournalPlaceholder from "../assets/images/Daily-Journal-small.png";
 import DiscordBot from "../assets/images/Discord-Bot.png";
+import DiscordBotPlaceholder from "../assets/images/Discord-Bot-small.png";
 import OMDB from "../assets/images/OMDB.png";
+import OMDBPlaceholder from "../assets/images/OMDB-small.png";
 import StonePaperScissor from "../assets/images/Stone-Paper-Scissor-App.jpg";
+import StonePaperScissorPlaceholder from "../assets/images/Stone-Paper-Scissor-App-small.jpg";
 import DunkJokes from "../assets/images/Dunk-Jokes-Chrome-Extension.png";
+import DunkJokesPlaceholder from "../assets/images/Dunk-Jokes-Chrome-Extension-small.png";
 import ToDoList from "../assets/images/To-Do-List.png";
+import ToDoListPlaceholder from "../assets/images/To-Do-List-small.png";
 import CollegeLMS from "../assets/images/College-LMS.png";
+import CollegeLMSPlaceholder from "../assets/images/College-LMS-small.png";
 import SimonGame from "../assets/images/Simon.png";
+import SimonGamePlaceholder from "../assets/images/Simon-small.png";
 
 export const about = {
     fullName: "Akash Mukherjee",
@@ -94,7 +106,8 @@ type ProjectType = {
     technologies: string[];
     sourceCode?: string;
     livePreview?: string;
-    image?: string;
+    image: string;
+    placeholder: string;
 };
 export const projects: ProjectType[] = [
     {
@@ -118,6 +131,7 @@ export const projects: ProjectType[] = [
         livePreview: "https://elegantapparels.netlify.app",
         sourceCode: "https://github.com/memukherjee/e-commerce-app",
         image: ElegantApparelsImg,
+        placeholder: ElegantApparelsImgPlaceholder,
     },
     {
         name: "shortURL",
@@ -138,6 +152,7 @@ export const projects: ProjectType[] = [
         sourceCode: "https://github.com/memukherjee/url-shortener",
         livePreview: "https://me-shorturl.netlify.app/",
         image: URLShortener,
+        placeholder: URLShortenerPlaceholder,
     },
     {
         name: "Twitter-2.0",
@@ -153,6 +168,7 @@ export const projects: ProjectType[] = [
             "https://github.com/memukherjee/Nagarro-Projects/tree/main/twitter-clone",
         livePreview: "https://me-twitter.up.railway.app",
         image: TwitterClone,
+        placeholder: TwitterClonePlaceholder,
     },
     {
         name: "Gallery",
@@ -166,6 +182,7 @@ export const projects: ProjectType[] = [
         sourceCode: "https://github.com/memukherjee/image-gallery",
         livePreview: "https://memukherjee.github.io/image-gallery/",
         image: ImageGallery,
+        placeholder: ImageGalleryPlaceholder,
     },
     {
         name: "Daily Journal",
@@ -180,6 +197,7 @@ export const projects: ProjectType[] = [
         sourceCode: "https://github.com/memukherjee/Blog-Website",
         livePreview: "https://me-daily-journal.up.railway.app",
         image: DailyJournal,
+        placeholder: DailyJournalPlaceholder,
     },
     {
         name: "PauL Bot",
@@ -195,6 +213,7 @@ export const projects: ProjectType[] = [
         livePreview:
             "https://discord.com/oauth2/authorize?client_id=935102650754678784&scope=bot",
         image: DiscordBot,
+        placeholder: DiscordBotPlaceholder,
     },
     {
         name: "OMDB",
@@ -210,6 +229,7 @@ export const projects: ProjectType[] = [
             "https://github.com/memukherjee/Nagarro-Projects/tree/main/OMDB-api",
         livePreview: "https://memukherjee.github.io/Nagarro-Projects/OMDB-api/",
         image: OMDB,
+        placeholder: OMDBPlaceholder,
     },
     {
         name: "Stone Paper Scissor",
@@ -224,6 +244,7 @@ export const projects: ProjectType[] = [
         sourceCode:
             "https://github.com/memukherjee/Stone-Paper-Scissor-Android-App",
         image: StonePaperScissor,
+        placeholder: StonePaperScissorPlaceholder,
     },
     {
         name: "Dunk Jokes",
@@ -237,6 +258,7 @@ export const projects: ProjectType[] = [
         technologies: ["HTML", "Javascript"],
         sourceCode: "https://github.com/memukherjee/Dunk-Jokes",
         image: DunkJokes,
+        placeholder: DunkJokesPlaceholder,
     },
     {
         name: "To Do List",
@@ -251,6 +273,7 @@ export const projects: ProjectType[] = [
         sourceCode: "https://github.com/memukherjee/ToDoList-Node-EJS-MongoDB",
         livePreview: "https://me-todo.up.railway.app/",
         image: ToDoList,
+        placeholder: ToDoListPlaceholder,
     },
     {
         name: "College LMS",
@@ -265,6 +288,7 @@ export const projects: ProjectType[] = [
         sourceCode: "https://github.com/memukherjee/College-LMS",
         // livePreview: "https://collegelmsystem.000webhostapp.com/",
         image: CollegeLMS,
+        placeholder: CollegeLMSPlaceholder,
     },
     {
         name: "Simon Game",
@@ -279,6 +303,7 @@ export const projects: ProjectType[] = [
         sourceCode: "https://github.com/memukherjee/simon",
         livePreview: "https://memukherjee.github.io/simon/",
         image: SimonGame,
+        placeholder: SimonGamePlaceholder,
     },
 ];
 

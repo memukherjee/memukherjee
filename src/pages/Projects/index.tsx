@@ -14,6 +14,7 @@ import ProjectLink from "../../components/ProjectLink";
 import useElementHeight from "../../hooks/useElementHeight";
 import { useState } from "react";
 import PageTransitionContainer from "../../components/PageTransitionContainer";
+import LazyImage from "../../components/LazyImage";
 
 export default function Projects() {
     const { projectId } = useParams();
@@ -34,20 +35,25 @@ export default function Projects() {
             <section className="mb-24">
                 <div
                     style={{
-                        backgroundImage: `url(${currentProject.image})`,
+                        backgroundImage: `url(${currentProject.placeholder})`,
                     }}
                     className="parallax-hero-img relative overflow-hidden w-full h-[25vh] md:h-[60dvh] bg-cover bg-center"
                 >
                     <div className="blur-backdrop absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm" />
-                    <motion.img
+                    <motion.div
                         style={{
                             y: spring,
                             x: "-50%",
                         }}
-                        className="h-[calc(100%+181px)] md:h-[calc(100%+95px)] absolute bottom-0 left-1/2"
-                        src={currentProject.image}
-                        alt={currentProject.name}
-                    />
+                        className="absolute bottom-0 left-1/2 w-full md:w-max h-[calc(100%+181px)] md:h-[calc(100%+95px)]"
+                    >
+                        <LazyImage
+                            className="h-full w-full object-fill"
+                            src={currentProject.image}
+                            placeholder={currentProject.placeholder}
+                            alt={currentProject.name}
+                        />
+                    </motion.div>
                 </div>
                 <div className="top-container overflow-hidden">
                     <TextLoop

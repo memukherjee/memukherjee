@@ -27,11 +27,11 @@ export default function SkillSection() {
                         color: skills[selectedSkill].color,
                         backgroundColor: "#000",
                     }}
-                    className="right-side grow outline outline-offset-8 h-[410px] aspect-[4/3] px-4"
+                    className="right-side grow outline outline-offset-8 h-[410px]  lg:w-2/5 px-4"
                 >
                     <div className="heading-bar flex justify-between items-center py-1 border-b-2 border-current mb-4">
                         <span className="text-xl icon">
-                            {skills[selectedSkill].icon()}
+                            {skills[selectedSkill].icon({})}
                         </span>
                         {skills[selectedSkill].extensionName && (
                             <h3 className="text-sm font-light">

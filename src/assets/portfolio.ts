@@ -346,7 +346,11 @@ int main(){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta 
+        name="viewport" 
+        content="width=device-width, 
+        initial-scale=1.0"
+    >
     <title>Document</title>
 </head>
 <body>
@@ -406,13 +410,18 @@ button.addEventListener("click", () => {
 <html lang="en">
 <head>
     <title>Bootstrap</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"
+    >
 </head>
 <body>
     <div class="container">
         <h1 class="text-primary">Hello World</h1>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"
+    ></script>
 </body>
 </html>
 `,

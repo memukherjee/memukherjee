@@ -4,7 +4,25 @@
         - font-family: 'Open Sans', sans-serif;
         - font-family: 'JetBrains Mono', monospace;
 */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"); */
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: local("Bebas Neue"),
+    url(./fonts/Bebas_Neue/BebasNeue-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans"),
+    url(./fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: local("JetBrains Mono"),
+    url(./fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf) format("truetype");
+}
 
 /* Tailwind Classes */
 @tailwind base;
@@ -12,36 +30,36 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --conic-border-angle: 0turn;
-    }
+  :root {
+    --conic-border-angle: 0turn;
+  }
 }
 @property --conic-border-angle {
-    syntax: "<angle>";
-    inherits: true;
-    initial-value: 0turn;
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    overscroll-behavior-y: none;
-    background-color: #111;
+  overscroll-behavior-y: none;
+  background-color: #111;
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 50px #111 inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 50px #111 inset !important;
 }
 
-input:-webkit-autofill{
-    -webkit-text-fill-color: #777 !important;
+input:-webkit-autofill {
+  -webkit-text-fill-color: #777 !important;
 }
 
 ::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }
